@@ -13,7 +13,7 @@ ESP8266(ESP-WROOM-02)を利用した THETA S の フル操作リモコンです�
   ・起動時のモードが指定できるので、素早く撮影を開始できます。<BR>
   ・単独でTHETA Sの登録ができます（SSID,Passwordは出荷状態であること）。<BR>
 <BR>
-以下の部材は必須です。<BR>
+以下の部材は必須です。（結線はソースコードのファイルヘッダ参照）<BR>
   ・ESP-WROOM-02 Dev.board : https://www.switch-science.com/catalog/2500/ <BR>
   ・I2C LCD Display        : https://www.switch-science.com/catalog/1405/ <BR>
   ・5Way Tactil Switch     : https://www.switch-science.com/catalog/979/ <BR>
