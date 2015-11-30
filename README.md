@@ -11,6 +11,7 @@ ESP8266(ESP-WROOM-02)を利用した THETA S の フル操作リモコンです�
   ・AUTOモードでWBを指定できます。<BR>
   ・音量設定ができます。<BR>
   ・起動時のモードが指定できるので、素早く撮影を開始できます。<BR>
+    (THETA S電源On後、最初にリモコンに接続したときのモードを設定可能)<BR>
   ・単独でTHETA Sの登録ができます（SSID,Passwordは出荷状態であること）。<BR>
 <BR>
 以下の部材は必須です。（結線はソースコードのファイルヘッダ参照）<BR>
@@ -19,8 +20,8 @@ ESP8266(ESP-WROOM-02)を利用した THETA S の フル操作リモコンです�
   ・5Way Tactil Switch     : https://www.switch-science.com/catalog/979/ <BR>
 <BR>
 電源（充電回路とバッテリー）には以下を使用しています。<BR>
-  ・Li-Po Battery          : https://www.switch-science.com/catalog/1007/<BR>
-  ・LiPo Charger/Booster   : https://www.switch-science.com/catalog/821/<BR>
+  ・LiPo Charger/Booster   : https://www.switch-science.com/catalog/1007/<BR>
+  ・Li-Po Battery          : https://www.switch-science.com/catalog/821/<BR>
 <BR>
 ケースはBREOというお菓子のものを利用しています（ただし、このケースはすでに絶版）<BR>
 電源スイッチ、リード線、5方向スイッチのキャップなどはさらに別途用意してください。<BR>
