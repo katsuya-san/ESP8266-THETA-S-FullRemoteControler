@@ -36,7 +36,7 @@
 #include <ESP8266WiFi.h>
 #include <ArduinoJson.h>  // Add JSON Library  https://github.com/bblanchon/ArduinoJson
 
-const char sThetaRemoteVersion[] = "v01.00";    //Last Update 2015-11-29
+const char sThetaRemoteVersion[] = "v01.01";    //Last Update 2015-12-17
 
 //---  Pin definition ---
 const int SW_C_Pin  = 0;
@@ -239,16 +239,18 @@ char  sList_WB_Disp[LIST_NUM_WB][5] = {
 
 
 #define   LIST_MAXSTRLEN_OPT      16
-#define   LIST_NUM_OPT            3
+#define   LIST_NUM_OPT            4
 char  sList_Opt[LIST_NUM_OPT][LIST_MAXSTRLEN_OPT] = {
                 "off",
                 "DR Comp", 
-                "Noise Reduction"
+                "Noise Reduction",
+                "hdr"
     };
 char  sList_Opt_Disp[LIST_NUM_OPT][4] = {
                 "Off",
                 "DR ", 
-                "NR "
+                "NR ",
+                "HDR"
     };
 
 
@@ -2062,4 +2064,3 @@ int     ThetaAPI_Post_setOptions__shutterVolume(void)
   
   return iRet;
 }
-
