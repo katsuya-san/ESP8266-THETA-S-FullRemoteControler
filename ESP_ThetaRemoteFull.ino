@@ -36,7 +36,7 @@
 #include <ESP8266WiFi.h>
 #include <ArduinoJson.h>  // Add JSON Library  https://github.com/bblanchon/ArduinoJson
 
-const char sThetaRemoteVersion[] = "v01.01";    //Last Update 2015-12-17
+const char sThetaRemoteVersion[] = "v01.02";    //Last Update 2015-12-22 : modified the notation error of white balance.
 
 //---  Pin definition ---
 const int SW_C_Pin  = 0;
@@ -231,10 +231,10 @@ char  sList_WB_Disp[LIST_NUM_WB][5] = {
                 "clou",
                 "lb 1",
                 "lb 2",
-                "lb 3",
-                "lb 4",
-                "fl 1",
-                "fl 2"
+                "fl D",
+                "fl N",
+                "fl W",
+                "fl L"
     };
 
 
