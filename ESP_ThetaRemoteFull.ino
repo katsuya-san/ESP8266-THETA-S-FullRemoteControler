@@ -36,8 +36,8 @@
 #include <ESP8266WiFi.h>
 #include <ArduinoJson.h>  // Add JSON Library  https://github.com/bblanchon/ArduinoJson
 
-const char sThetaRemoteVersion[] = "v01.02";    //Last Update 2015-12-22 : modified the notation error of white balance.
-
+const char sThetaRemoteVersion[] = "v01.03";    //Last Update 2015-12-23 : corresponding to "ESP8266Arduino Core version 2.0.0"
+                                                // see http://esp8266.github.io/Arduino/versions/2.0.0/
 //---  Pin definition ---
 const int SW_C_Pin  = 0;
 
@@ -1311,6 +1311,7 @@ int SearchAndEnterTHETA(void)
   int iRet = 0;
   int iThetaCnt=0;
   int aiSsidPosList[20];
+  char ssidbuf[256];
   
   Serial.println("");
   Serial.println("Search THETA");
@@ -1333,7 +1334,8 @@ int SearchAndEnterTHETA(void)
       Serial.println((WiFi.encryptionType(i) == ENC_TYPE_NONE)?" ":"*");
 
       if( WiFi.RSSI(i) >= NEAR_RSSI_THRESHOLD ) {
-        if ( CheckThetaSsid(WiFi.SSID(i)) == 1 ) {
+        WiFi.SSID(i).toCharArray(ssidbuf, sizeof(ssidbuf));
+        if ( CheckThetaSsid(ssidbuf) == 1 ) {
           aiSsidPosList[iThetaCnt]=i;
           iThetaCnt++;
         }
@@ -1352,7 +1354,8 @@ int SearchAndEnterTHETA(void)
         }
       }
       //Enter THETA SSID to EEPROM
-      SaveThetaSsid( (char*)WiFi.SSID(aiSsidPosList[iRssiMaxPos]) );
+      WiFi.SSID(aiSsidPosList[iRssiMaxPos]).toCharArray(ssidbuf, sizeof(ssidbuf));
+      SaveThetaSsid(ssidbuf);
       Serial.println("");
       Serial.println("--- Detected TEHTA ---");
       Serial.print("SSID=");
